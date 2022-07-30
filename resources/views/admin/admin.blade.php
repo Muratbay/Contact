@@ -22,7 +22,7 @@
         <tr>
             <td>{{ $loop->index+1 }}</td>
             <td><img src="{{ asset('storage/'.$form->file) }}" alt="foto" width="50"></td>
-            <td>{{ $form->massege }}</td>
+            <td>{{ $form->message }}</td>
             <td>Status</td>
             <td><form action="{{ route('destroy',$form->id)}}" method="POST">
             @method('DELETE')    
