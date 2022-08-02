@@ -3,13 +3,21 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FormsController;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
-
-
+use Spatie\Permission\Models\Role as ModelsRole;
 
 // Route::get('/', function () {
-//     return view('welcome');
+//      $user = User::where('id', 1)->get();
+
+//      $user->assignRole('writer');
 // });
+
+// Route::group(['middleware' => ['role:writer']], function () {
+    Route::get('/admin',[AdminController::class,'index'])->name('index');
+// });
+
 Route::get('/forms', [FormsController::class, 'index'])->name('index');
 Route::post('/create', [FormsController::class, 'store'])->name('create');
 Route::get('/', [AuthController::class, 'login'])->name('login');

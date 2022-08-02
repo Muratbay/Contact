@@ -32,6 +32,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->input('password'))
         ]);
 
+        session()->regenerate();
         return view('index');
     }
 

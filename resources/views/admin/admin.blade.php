@@ -1,3 +1,6 @@
+@role('super-admin')
+    I am a super-admin!
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,3 +42,7 @@
         
 </body>
 </html>
+
+@else
+I am not a super-admin...
+@endrole
